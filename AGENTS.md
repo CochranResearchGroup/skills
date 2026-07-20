@@ -1,0 +1,46 @@
+# Mapocock.Skills
+
+## Repo Context
+
+- Describe this repo's purpose, canonical planning surfaces, and operating model here.
+
+## Repo-Specific Guidance
+
+- Add the exact commands, constraints, and local conventions this repo expects.
+
+## Policy Loading Contract
+
+- `AGENTS.md` is a routing surface, not a one-time pointer.
+- Re-read the relevant policy files under `docs/dev/policies/` at the start of any non-trivial turn.
+- Re-read the relevant policy files when task scope changes mid-session.
+- When behavior is ambiguous, prefer re-reading policy over improvising from stale assumptions.
+
+## Policy Re-read Triggers
+
+- re-read planning-related policy before opening, revising, or closing a substantive plan
+- re-read documentation-related policy before changing docs, contracts, or canonical authorities
+- re-read validation and closeout policy before claiming work complete
+
+## Policy Entry
+
+This repo keeps its durable repo-local policy under `docs/dev/policies/`.
+
+Read and follow:
+- `docs/dev/policies/0001-policy-management.md`
+- `docs/dev/policies/0002-policy-upgrade-management.md`
+- `docs/dev/policies/0003-policy-adoption-feedback-loop.md`
+- `docs/dev/policies/0004-graph-backed-memory-usage.md`
+- `docs/dev/policies/0005-codegraph-usage.md`
+- `docs/dev/policies/0006-git-worktree-hygiene.md`
+- `docs/dev/policies/0007-commit-history-discipline.md`
+- `docs/dev/policies/0008-branch-and-integration-strategy.md`
+- `docs/dev/policies/0009-commit-and-push-cadence.md`
+- `docs/dev/policies/0010-versioning-and-release.md`
+- `docs/dev/policies/0011-turn-closeout.md`
+- `docs/dev/policies/0012-validation-and-handoff.md`
+
+## Scope
+
+- `AGENTS.md` includes repo-local guidance plus the policy entry section.
+- The durable policy body lives under `docs/dev/policies/`.
+- Keep repo-specific commands, environment details, and operational caveats in this file or adjacent local docs.
