@@ -2,11 +2,11 @@
 
 ## Repo Context
 
-- Describe this repo's purpose, canonical planning surfaces, and operating model here.
+- Describe the product area, architecture boundaries, and canonical planning surfaces here.
 
 ## Repo-Specific Guidance
 
-- Add the exact commands, constraints, and local conventions this repo expects.
+- Add the exact build, test, deploy, and service-boundary rules this repo expects.
 
 ## Policy Loading Contract
 
@@ -20,6 +20,7 @@
 - re-read planning-related policy before opening, revising, or closing a substantive plan
 - re-read documentation-related policy before changing docs, contracts, or canonical authorities
 - re-read validation and closeout policy before claiming work complete
+- re-read branch, commit, and integration policy before starting a multi-file or multi-step implementation slice
 
 ## Policy Entry
 
@@ -38,6 +39,14 @@ Read and follow:
 - `docs/dev/policies/0010-versioning-and-release.md`
 - `docs/dev/policies/0011-turn-closeout.md`
 - `docs/dev/policies/0012-validation-and-handoff.md`
+- `docs/dev/policies/0022-goal-execution-governance.md`
+- `docs/dev/policies/0023-notes-and-memories.md`
+- `docs/dev/policies/0024-planning-discipline.md`
+- `docs/dev/policies/0025-parallel-plan-design.md`
+- `docs/dev/policies/0027-architecture-guardrails.md`
+- `docs/dev/policies/0028-documentation-change-control.md`
+- `docs/dev/policies/0029-multi-agent-reconciliation.md`
+- `docs/dev/policies/0030-subagent-workflow-optimization.md`
 
 ## Scope
 
