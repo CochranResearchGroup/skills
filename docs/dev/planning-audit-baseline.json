@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "rationale": "The selector reports roadmap and runbook profile gaps while the repo's current plan and policy migration are uncommitted operator work. Canonical authorities must not be fabricated during audit repair.",
+  "review_condition": "Re-evaluate when the operator commits canonical planning authorities or explicitly retires roadmap/runbook governance; new findings remain blocking.",
+  "accepted_findings": [
+    "missing ROADMAP.md",
+    "missing RUNBOOK.md"
+  ]
+}
