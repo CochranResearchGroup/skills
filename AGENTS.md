@@ -47,6 +47,7 @@ Read and follow:
 - `docs/dev/policies/0028-documentation-change-control.md`
 - `docs/dev/policies/0029-multi-agent-reconciliation.md`
 - `docs/dev/policies/0030-subagent-workflow-optimization.md`
+- `docs/dev/policies/0032-subagent-runtime-governance.md`
 
 ## Scope
 
