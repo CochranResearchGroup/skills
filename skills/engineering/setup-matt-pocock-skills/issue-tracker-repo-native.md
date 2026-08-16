@@ -31,3 +31,17 @@ Read the referenced plan, note, roadmap item, runbook item, or local artifact pa
 ## Status
 
 Represent status in the artifact itself with a short status line or checklist, matching the local convention if one exists.
+
+## Wayfinding operations
+
+- **Map:** create one `OPEN` plan under `docs/dev/plans/` with Destination,
+  Notes, Decisions so far, Not yet specified, and Out of scope sections.
+- **Decision ticket:** create one sibling plan per question with `Parent map`,
+  `Type: wayfinder:<type>`, `Owner`, `Blocked by`, and `Status` fields.
+- **Children:** query by the exact `Parent map` path. Open, unowned children
+  whose `Blocked by` paths are all `CLOSED` form the frontier.
+- **Claim:** set `Owner` before work. Clear it only when abandoning the ticket.
+- **Resolution:** add a Resolution section, set the ticket `CLOSED`, and append
+  one linked gist to the map's Decisions so far section.
+- **Blocking:** use exact repo-relative artifact paths so the dependency graph
+  remains deterministic without a remote tracker.
