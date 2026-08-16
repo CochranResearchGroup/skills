@@ -1,13 +1,17 @@
 # Plan 0002 | Upstream Rebase And Codex User-Scope Publication
 
-Status: OPEN
+Status: CLOSED
 
 ## Current State
 
-The local tailoring packet is committed at `88dcfe0`. The local branch is nine
-commits ahead of and 295 commits behind upstream `main` at
-`068b6e0c62393147daf03530149cdce209c93da8`. The active Codex user-scoped skill
-directory is `/home/ecochran76/.agents/skills`.
+The curated downstream source is committed at `9addf28`, which is eleven
+commits ahead of and zero commits behind upstream `main` at
+`068b6e0c62393147daf03530149cdce209c93da8`; local `main` resolves to that same
+upstream commit. The pre-rebase tip remains at
+`backup/eco-main/2026-08-16-pre-rebase` (`47a58e4`). All 24 promoted skills are
+published under `/home/ecochran76/.agents/skills` and resolve to this checkout.
+The retired `implement`, `to-prd`, `to-issues`, and `writing-great-skills`
+user-scope names are absent.
 
 ## Scope
 
