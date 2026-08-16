@@ -7,7 +7,7 @@ description: Diagnosis loop for hard bugs and performance regressions. Use when 
 
 A discipline for hard bugs. Skip phases only when explicitly justified.
 
-When exploring the codebase, read `CONTEXT.md` (if it exists) to get a clear mental model of the relevant modules, and check ADRs in the area you're touching.
+When exploring the codebase, read `CONTEXT.md` (if it exists) to get a clear mental model of the relevant modules, and check ADRs in the area you're touching. If `docs/agents/codex-code-discovery.md` exists, follow it before structural code exploration. If `docs/agents/runtime-proof.md` exists, follow it when the bug touches MCP wiring, user services, tenant state, Slack/OpenClaw, browser automation, or generated evidence artifacts.
 
 ## Redact
 
