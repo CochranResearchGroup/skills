@@ -7,6 +7,9 @@
 - Include concrete pass/fail evidence in the handoff or closeout note.
 - Keep handoff notes concise, explicit about remaining risk, and clear about the next recommended action.
 - When live or manual smoke matters for the changed surface, record whether it was run and what it proved.
+- Distinguish validation run by the primary agent from validation reported by a subagent or delegated worker.
+- If validation was delegated, record whether the primary agent independently verified the result or accepted the delegated evidence as-is.
+- For failed, timed-out, incomplete, or unknown subagent statuses, state what was trusted, what was ignored, and what remains unverified.
 - Prefer validation receipts that bind the result to a durable commit, artifact,
   installed version, endpoint response, or other current-state identifier.
   Temporary paths alone are not durable handoff evidence; preserve or publish

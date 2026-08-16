@@ -2,6 +2,9 @@
 
 ## Policy
 
+- After first policy adoption, major policy upgrade, or meaningful policy friction, record a dated feedback artifact in the adopting repo.
+- The feedback artifact should identify at least:
+  - installed policy bundle version or ref, or the policy source reviewed
 - After first policy adoption, the first substantive execution under that
   policy, a major policy upgrade, or meaningful policy friction, record a dated
   feedback artifact in the adopting repo.
@@ -30,6 +33,9 @@
 - If the repo uses a pinned installed selector bundle, tie feedback to that pinned version so later maintainers can interpret it correctly.
 - When a repo adopts local overrides instead of the exact starter profile, record why; those reasons are often the best signal for future shared policy refinement.
 - When a repo upgrades policy, compare the new experience to prior adoption notes so repeated friction becomes visible over time.
+- When a repo has an explicit graph-memory group, mirror compact source-cited adoption feedback into that group after the dated feedback artifact exists, especially when it identifies reusable friction, missing modules, profile-fit issues, or selector behavior changes.
+- Keep graph-memory feedback entries small and source-anchored. They should point future agents to the dated artifact or release note, not replace it.
+- A single dated artifact may satisfy this module, `policy-upgrade-management`, and `notes-and-memories` when it captures both the upgrade or adoption decision and the resulting feedback clearly.
 - Record stale local-policy prose, invalid local facts, and audit-contract
   incompatibilities as adoption defects even when the underlying work outcome
   was successful.
