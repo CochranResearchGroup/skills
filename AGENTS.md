@@ -76,6 +76,7 @@ Read and follow:
 - `docs/dev/policies/0030-subagent-workflow-optimization.md`
 - `docs/dev/policies/0032-subagent-runtime-governance.md`
 - `docs/dev/policies/0033-upstream-fork-maintenance.md`
+- `docs/dev/policies/0034-active-lane-coordination.md`
 
 ## Scope
 
