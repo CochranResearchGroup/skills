@@ -77,6 +77,7 @@ Read and follow:
 - `docs/dev/policies/0032-subagent-runtime-governance.md`
 - `docs/dev/policies/0033-upstream-fork-maintenance.md`
 - `docs/dev/policies/0034-active-lane-coordination.md`
+- `docs/dev/policies/0035-code-testing-discipline.md`
 
 ## Scope
 
