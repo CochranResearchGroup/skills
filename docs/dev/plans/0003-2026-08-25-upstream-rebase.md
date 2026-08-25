@@ -1,14 +1,16 @@
 # Plan 0003 | Upstream Rebase
 
-Status: OPEN
+Status: CLOSED
 
 ## Current State
 
 Local `main` and `upstream/main` both resolve to
-`6654f6b60cd9d5be8b54c6fafe44346dabeb3b76`. The clean `eco/main` carry branch
-resolves to `7cc86a833fb2d70d4fb4def1a4193dd956102902`, fourteen commits ahead of and
-twenty commits behind upstream. A merge-tree preview identified overlapping
-upstream prose and downstream Codex/policy adaptations in sixteen files.
+`6654f6b60cd9d5be8b54c6fafe44346dabeb3b76`. The complete downstream carry is
+rebased onto that tip, with the source reconciliation committed at `11c362c`.
+The prior v0.1.20 carry tip remains recoverable at
+`backup/eco-main/2026-08-25-pre-rebase` (`7cc86a8`). The final validation and
+conflict decisions are recorded in
+`docs/dev/notes/0004-2026-08-25-upstream-rebase.md`.
 
 ## Scope
 
