@@ -18,11 +18,14 @@
 - Review profile changes separately from module changes; a profile upgrade should not silently force a repo into every newly suggested module.
 - When a local repo has customized policy, prefer merge review over blind overwrite.
 - Retire superseded local policy files explicitly when a shared replacement makes them unnecessary.
+- Remove superseded `AGENTS.md` pointers in the same transaction and verify that
+  exactly one retained path remains.
 - Resolve upgrades by module identity before allocating a new ordinal filename.
   Replace or merge the existing adopted path when one identity exists; when
   several paths claim the identity, stop and require explicit reconciliation.
-- Remove superseded `AGENTS.md` pointers in the same transaction and verify that
-  exactly one retained path remains.
+- An upgrade is incomplete while `AGENTS.md` wires both a superseded and current
+  generation. Remove the retired pointer in the same transaction and verify
+  that exactly one retained path remains.
 - Never infer the winner between divergent duplicates from filename recency,
   modification time, or list order. Compare content and local overrides, retain
   the intended semantics, and record the retirement decision.
@@ -35,6 +38,7 @@
   - adoption feedback
   - reusable continuity notes
   when it records the version reviewed, decision taken, rationale, and notable fit or friction.
+
 ## Adoption Notes
 
 Use this module when the repo depends on an external or shared policy library and needs a durable contract for staying current without adopting every upstream change blindly.
