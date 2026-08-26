@@ -1,14 +1,14 @@
 # Plan 0004 | Policy Identity And Skill Conformance
 
-Status: OPEN
+Status: CLOSED
 
 ## Current State
 
-The repository is clean on `eco/main` at `4d5e03c`. Its `v0.1.20` policy
-adoption wires seven duplicate module identities: four byte-identical pairs and
-three pairs where an older generation coexists with the current policy. The
-promoted `code-review` and `resolving-merge-conflicts` skills also contain
-instructions that conflict with the adopted evaluator and Git safety contract.
+Implementation is committed on `eco/main` at `29dbd06`. Seven duplicate module
+identities have been reconciled to one retained path apiece, the inapplicable
+roadmap/runbook module and its exception baseline are retired, and promoted
+skill contracts now match the adopted evaluator, retry, testing, and Git safety
+rules. Validation is complete; only this closeout record remains to commit.
 
 ## Scope
 
@@ -47,5 +47,46 @@ recoverable without changing remote or user-scope state.
 
 ## Next Action
 
-Wait for the shared selector enforcement checkpoint, then reconcile duplicates
-and skill text against that source contract.
+Publish or push only under separate authority. A future policy release may
+carry the shared duplicate-identity guard; no release or installation occurred
+in this plan.
+
+## Checkpoint 1 | Identity Reconciliation
+
+Progress classification: outcome progress.
+
+- Shared selector enforcement landed locally in `agent-policies` commit
+  `c375eee` before downstream reconciliation began.
+- Mapocock commit `29dbd06` removed seven superseded policy generations and
+  retained one wired file per adopted identity.
+- Roadmap/runbook governance was retired because its documented prerequisites
+  are absent; no synthetic authority files were created.
+
+## Checkpoint 2 | Skill Contract Repair
+
+Progress classification: outcome progress.
+
+- Promoted review, conflict-resolution, research, diagnosis, and TDD guidance
+  now preserve primary adjudication, conditional delegation, bounded retries,
+  safe abort/restart, semantic rebase validation, and stable regression seams.
+- Deterministic publication checks now reject the superseded unsafe phrases and
+  prevent promotion of `implement`, `implement-spec`, and `retro`.
+
+## Checkpoint 3 | Acceptance And Custody
+
+Progress classification: outcome evidence.
+
+- Policy identity audit: zero duplicates and no validation problems. The sole
+  source-selector recommendation is the intentionally inapplicable
+  `roadmap-runbook-governance` companion module.
+- Active-plan and goal-contract audits passed after retiring that module and
+  its exact legacy baseline.
+- Plugin version sync, strict plugin validation, 37 skill-frontmatter parses,
+  relative links across 65 Markdown files, and the 24-skill user-scope
+  publication check all passed without publication.
+- The first frontmatter-check attempt could not import optional Python package
+  `yaml`; the check was rerun with Ruby's standard YAML parser and passed. This
+  was a validator-environment issue, not a product-test retry.
+- Local branch `eco/main` is two commits ahead of owned
+  `origin/eco/main` (`4c3e166`, `29dbd06`) and 19 commits ahead of tracked
+  public `upstream/main`. Nothing was pushed, published, installed, or rebased.
