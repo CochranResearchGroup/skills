@@ -2,29 +2,11 @@
 
 ## Repo Context
 
-- This is a governed downstream of `mattpocock/skills` that carries a small
-  Codex/workstation overlay over the public upstream.
-- `main` mirrors `upstream/main`; `eco/main` is the rebase-managed local carry
-  branch; dated `backup/eco-main/*` refs preserve pre-rebase tips.
-- Canonical execution plans and durable notes live under `docs/dev/plans/` and
-  `docs/dev/notes/`. The promoted skill set is declared by
-  `.claude-plugin/plugin.json`.
+- Describe the product area, architecture boundaries, and canonical planning surfaces here.
 
 ## Repo-Specific Guidance
 
-- Read `CLAUDE.md` for the upstream repository's skill packaging, invocation,
-  docs-page, and plugin validation rules. This file and `docs/dev/policies/`
-  override it for downstream branch, Codex, and publication behavior.
-- Keep upstream skill behavior recognizable and layer local CodeGraph,
-  repo-native planning, runtime-proof, durable-handoff, and preview-review
-  rules narrowly.
-- Keep `implement` in source for upstream comparability, but do not promote or
-  publish it while it commits automatically.
-- Validate with `npm run check-plugin-version`, the policy planning audits, and
-  `scripts/publish-codex-skills.sh --check` before closeout.
-- Publish the curated set to Codex user scope with
-  `scripts/publish-codex-skills.sh`; do not use the broad multi-harness linker
-  for a Codex-only rollout.
+- Add the exact build, test, deploy, and service-boundary rules this repo expects.
 
 ## Policy Loading Contract
 

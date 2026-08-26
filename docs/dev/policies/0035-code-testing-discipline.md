@@ -9,6 +9,11 @@
   pattern. If no valid seam exists, record the unprotected risk and the
   architecture or testability gap instead of adding a shallow proxy that
   creates false confidence.
+- Put a regression test at a stable seam that exercises the real failure
+  pattern. If no such seam exists, do not add a shallow or implementation-
+  coupled proxy merely to claim coverage; record the unprotected risk and the
+  architecture or testability gap, then route remediation as a separate bounded
+  decision.
 - Keep each test independent, deterministic, order-agnostic, and hermetic by default. Declare inputs, isolate writable state, use explicit readiness signals instead of arbitrary sleeps, and keep network, provider, browser, large-data, and live-system tests out of the default local lane unless their exact risk requires them.
 - Define repo-local execution tiers and concrete wall-clock plus compute/resource budgets. At minimum distinguish focused development checks, blocking presubmit checks, periodic comprehensive regression, and opt-in live/soak/provider checks. A long comprehensive lane may remain valuable without blocking every change.
 - Use affected-test selection or explicit changed-surface manifests for fast feedback only when the dependency mapping is trustworthy. Unknown impact must widen to a documented safe fallback, and a periodic comprehensive run must detect selection drift. Never describe a selected subset as the full suite.
@@ -20,6 +25,7 @@
 - Use coverage to locate consequential gaps, not to chase a universal percentage. Prefer behavior, branch-risk, contract, and selectively applied mutation evidence over copy-pasted tests that only increase coverage.
 - When a suite exceeds its local budget, profile before changing the gate. Prefer cheaper seams, shared-fixture optimization without weakened isolation, case consolidation, tier correction, trustworthy selection, caching on declared inputs, or duration-aware sharding. Raising a budget requires an explicit risk/economics decision and a follow-up date.
 - Record exactly which tier, selection, environment, retries, shards, and exclusions ran. Validation claims must distinguish `focused`, `presubmit`, `comprehensive`, and `live_or_soak`, and must report any budget breach, flake, quarantine, or unexecuted risk.
+
 ## Adoption Notes
 
 Each adopting repo should define a local test-suite contract with concrete values for:
