@@ -32,7 +32,7 @@ Three words carry this skill.
 
 **Vertical slice.** One seam, one test, one minimal implementation, then repeat: the first cycle being a **tracer bullet** that proves a single path end to end. The opposite is horizontal slicing: all the tests first, then all the code. Bulk tests verify *imagined* behaviour, they check the shape of things rather than what a user does, and they commit you to a test structure before you understand the implementation.
 
-**Pre-agreed seam.** A seam is the public boundary you observe behaviour at without reaching inside. The rule is absolute: no test at an unconfirmed seam. In the full chain the seams are agreed earlier, during [to-spec](https://aihero.dev/skills-to-spec): "`/tdd` is told to only work at pre-agreed test seams, `/code-review` checks that only agreed-upon test seams were used." Invoked on its own, `tdd` asks you directly.
+**Explicit stable seam.** A seam is the public boundary you observe behaviour at without reaching inside. In the full chain the seams are recorded earlier during [to-spec](https://aihero.dev/skills-to-spec). Invoked on its own, `tdd` uses an existing seam when it clearly proves the frozen risk and asks you only when competing choices would materially change external behavior, scope, cost, or architecture.
 
 The three anti-patterns it is written to prevent:
 
@@ -52,7 +52,7 @@ Because the refactor step was removed and the description was not. The removal w
 
 **It asked me to choose a test seam and I had no idea which to pick.**
 
-This is the most-reported friction with the skill ([issue #607](https://github.com/mattpocock/skills/issues/607)). The prompt lists candidate seams by name only, with nothing about what each one catches or misses, so you are choosing between labels. There is no fix shipped yet. The practical workaround is to ask the agent for the trade-offs before answering: what does the component-level seam miss that the integration seam catches, and how much slower is it. It is also why the chain agrees seams up front in `to-spec`, where you have the whole feature in view rather than one prompt.
+The agent should resolve an obvious existing seam itself. When the choice is material, it must explain what each candidate catches, misses, and costs before asking: what does the component-level seam miss that the integration seam catches, and how much slower is it? The chain still records seams up front in `to-spec`, where the whole feature is visible.
 
 **It wrote the implementation before the test, even though the skill says red first.**
 
@@ -76,7 +76,7 @@ No. Run against one ticket, it will happily propose work that belongs to a sibli
 
 ## It's working if
 
-- It stops and names the seams it intends to test at, and waits, before any test file exists.
+- It names the stable seams it intends to test before any test file exists and asks only when a material choice remains.
 - One test appears, goes red, gets just enough code to pass, and only then does the next test appear: not a batch of tests followed by a batch of code.
 - Test names read as capabilities ("user can checkout with valid cart"), not as internals ("checkout calls paymentService.process").
 - Expected values in assertions are literals you can trace to the spec, not values recomputed the way the code computes them.

@@ -1,8 +1,8 @@
 ## What it does
 
-`resolving-merge-conflicts` works through an in-progress git merge or rebase, hunk by hunk, then runs the project's own checks and finishes the operation with a commit.
+`resolving-merge-conflicts` works through an in-progress git merge or rebase, hunk by hunk, then runs the project's checks and frozen semantic invariants. It finishes only when the result is proved safe.
 
-It refuses to treat a conflict as a text problem. Before touching a hunk it traces each side back to its **[primary source](https://www.aihero.dev/ai-coding-dictionary/primary-source)** (the commit message, the PR, the original issue), so it is choosing between two intents rather than between two blocks of text, and it preserves both wherever they are compatible. Where they genuinely are not, it picks the side matching the merge's stated goal and names the trade-off. It invents no new behaviour to paper over a clash, and `--abort` is not an option it has: the merge is always carried to a finished commit.
+It refuses to treat a conflict as a text problem. Before touching a hunk it traces each side back to its **[primary source](https://www.aihero.dev/ai-coding-dictionary/primary-source)** (the commit message, the PR, the original issue), so it chooses between two intents rather than two blocks of text. It invents no new behaviour to paper over a clash. If intent, recovery state, or semantic validation is insufficient, aborting or restarting from a verified recovery ref is the correct fail-closed result.
 
 ## When to reach for it
 
@@ -34,17 +34,17 @@ Mostly no. Zoning files off between parallel tasks costs more than it saves, bec
 
 One caveat from a user report on parallel worktrees: when sibling [sessions](https://www.aihero.dev/ai-coding-dictionary/session) each build a ticket in their own tree, the merge back is best done by the session that wrote the change, because it is the one that already knows the intent. Batching everybody's conflicts onto one agent at the end throws away exactly the [context](https://www.aihero.dev/ai-coding-dictionary/context) step 2 of this skill has to go and reconstruct.
 
-**Why never `--abort`?**
+**When should it abort or restart?**
 
-Aborting throws away the resolution work and returns you to the same conflict, unchanged, the next time you try. The skill is written for the case where the merge is going to happen. If you have decided it should not happen, that is a decision to make before invoking, not a branch inside the loop.
+When either side's intent cannot be established, the recovery point is uncertain, or the proposed result cannot be validated without inventing behavior. Preserve any useful diagnosis, return to the verified checkpoint, and record why completion was unsafe. A clean index or passing syntax check is not enough when downstream semantics can still regress.
 
 ## It's working if
 
 - The agent quotes commit messages, PRs or issues at you while resolving, not just diff hunks.
 - Every hunk ends up with both sides' behaviour, or with an explicit note naming what was dropped and why.
 - Nothing appears in the result that was on neither branch.
-- Typecheck, tests and format were located and run green *before* the commit, not after you noticed something broken.
-- You end on a clean tree with the operation completed, including every remaining commit in a multi-commit rebase.
+- Typecheck, tests, format, and the frozen semantic invariants were verified before completion.
+- You end either on a clean validated result or at a verified recovery point with the fail-closed disposition recorded.
 
 ## Where it fits
 

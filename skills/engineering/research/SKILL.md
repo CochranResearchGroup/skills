@@ -3,7 +3,14 @@ name: research
 description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.
 ---
 
-Spin up a **background agent** to do the research, so you keep working while it reads.
+Use a **background agent** when delegation is authorized, available, and useful
+off the critical path. Otherwise conduct the same bounded research locally; do
+not turn missing delegation authority into a blocker.
+
+If you are already a delegated worker, do the research directly and do not
+delegate it again. Before reading, define the exact question, allowed primary-
+source classes, output path, and stopping criterion. Return partial cited
+evidence when the bound is reached instead of silently widening the topic.
 
 Its job:
 

@@ -20,21 +20,19 @@ Reach for it when the next step is *finding something out* from outside the work
 
 The line between `research` and `grill-with-docs` is the **shelf life of what comes back**. Research produces short-lived assets: what this library's auth mechanism does as of this week. An ADR records a decision you keep. If what you are producing is a decision rather than a fact, you are [grilling](https://www.aihero.dev/ai-coding-dictionary/grilling), not researching.
 
-## Delegated legwork
+## Bounded legwork
 
-The defining move is that the reading runs as a **background agent**. You keep working; it goes off, follows each claim to its primary source, writes one Markdown file, and reports back. Research is legwork you delegate, not thinking you outsource: you get a document to grill, plan, or design against, and you still make the call.
+The reading may run as a **background agent** when delegation is authorized, available, and useful off the critical path. Otherwise the primary performs the same bounded workflow locally. Research is legwork, not thinking you outsource: you get a document to grill, plan, or design against, and you still make the call.
 
-The delegation is unguarded, and the background agent can spawn a further background agent of its own. This is the skill's best-documented rough edge.
+A delegated researcher works directly and must not delegate again. Every run starts with an exact question, allowed primary-source classes, output path, and stopping criterion.
 
 Where the file lands is decided by the repo, not by the skill: it matches whatever convention already exists for notes, and if there is none it picks somewhere sensible and tells you where. It writes one file per run.
 
 ## Common questions
 
-**It spawned a second research agent. Is that meant to happen?**
+**Should a delegated researcher spawn another research agent?**
 
-No. This is an open bug, [issue #530](https://github.com/mattpocock/skills/issues/530). The skill tells its caller to spin up a background agent but does not restrict the agent type, so the agent it spawns is a `general-purpose` one that holds the `Agent` tool and the same instructions, and fires them again. One reporter measured a single research task costing roughly 450k [tokens](https://www.aihero.dev/ai-coding-dictionary/token) across three overlapping runs, with the duplicate finishing half an hour later entirely out of view. It reproduces outside Claude Code too; the same nesting was confirmed in Codex with GPT-5.6-sol. There is no shipped fix. Users have patched their own installed copy with a line telling an agent that is already a [subagent](https://www.aihero.dev/ai-coding-dictionary/subagent) to do the work itself, which helps but is instruction-level, not structural. Watch your background task list after invoking, and stop the duplicate.
-
-The opposite failure exists as well: if your own global instructions forbid an agent from re-delegating work, the background agent will politely decline the task and the skill quietly does nothing.
+No. The downstream skill explicitly tells a delegated worker to perform the research directly. If global or repo policy prohibits delegation, the primary runs the workflow locally instead of quietly doing nothing.
 
 **Where should the file live, and should I commit it?**
 
@@ -50,11 +48,11 @@ No. Nothing auto-loads a past research file; it is a document sitting in the rep
 
 **Why not just ask the agent to go read the docs?**
 
-You can, and a two-line prompt saying exactly that was the practice this skill replaced. Two things the skill buys over the prompt: it runs in the background so your session keeps its [context](https://www.aihero.dev/ai-coding-dictionary/context) clean, and the primary-source constraint and the cited-file output come out the same way every time rather than however you happened to phrase it. Against a [harness](https://www.aihero.dev/ai-coding-dictionary/harness)'s own deep-research mode, the difference is the artifact and the source discipline, not the search. If a two-line prompt gets you what you need on a small question, use the two-line prompt.
+You can. What the skill adds is a bounded question, primary-source constraint, stopping criterion, and cited-file output that stay consistent whether the work runs locally or in the background. If a two-line prompt gets you what you need on a small question, use it.
 
 **When does it stop reading?**
 
-There is no stopping criterion in the skill, and this shows up as two complaints that look opposite but are the same gap: agents that go far too deep, and agents that cover a topic broadly while missing the one specific detail that mattered. One practitioner put it as "deep-research skills are a bit too deep sometimes. And telling an agent to research usually results in missing crucial details." Scoping is on you. A narrow, answerable question (one API, one behaviour, one version claim) comes back far better than "research X".
+The run stops at its declared evidence or source bound. If the exact answer is still unavailable, it returns partial cited evidence and the missing source instead of widening the topic. A narrow, answerable question (one API, one behaviour, one version claim) remains much better than "research X".
 
 **`/wayfinder` created research tickets. Do I resolve those myself?**
 
@@ -62,8 +60,8 @@ No, it now fires them for you. In the unreleased changes since v1.1, a charting 
 
 ## It's working if
 
-- Your own session keeps going. If you are sitting watching it read, the delegation didn't happen.
-- Exactly one new background task appears. A second one with a near-identical name is the nesting bug.
+- The exact question, source boundary, output path, and stopping criterion are visible before reading begins.
+- If delegation is permitted, exactly one background task appears; otherwise the primary completes the same workflow locally.
 - One new Markdown file shows up, in the folder the repo already uses for notes, and the agent tells you the path.
 - Every claim in it carries a link, and following two at random lands you on an official doc, a spec, or the actual source file, not on someone's write-up of it.
 - You can make the decision you were stuck on from the file alone, without going back to the sources yourself.

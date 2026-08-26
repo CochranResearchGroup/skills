@@ -34,10 +34,12 @@ declare -A wanted=()
 for skill_path in "${skill_paths[@]}"; do
   source_dir="$repo_root/${skill_path#./}"
   skill_name="$(basename "$source_dir")"
-  if [[ "$skill_name" == "implement" ]]; then
-    echo "error: implement must not be published by this downstream" >&2
-    exit 1
-  fi
+  case "$skill_name" in
+    implement|implement-spec|retro)
+      echo "error: $skill_name must not be published by this downstream" >&2
+      exit 1
+      ;;
+  esac
   if [[ ! -f "$source_dir/SKILL.md" || ! -f "$source_dir/agents/openai.yaml" ]]; then
     echo "error: incomplete promoted skill: $source_dir" >&2
     exit 1
@@ -48,6 +50,34 @@ for skill_path in "${skill_paths[@]}"; do
   fi
   wanted["$skill_name"]="$source_dir"
 done
+
+require_skill_contract() {
+  local skill_name="$1"
+  local required_text="$2"
+  local source_file="${wanted[$skill_name]}/SKILL.md"
+  if ! grep -Fq -- "$required_text" "$source_file"; then
+    echo "error: promoted $skill_name is missing semantic contract: $required_text" >&2
+    exit 1
+  fi
+}
+
+reject_skill_contract() {
+  local skill_name="$1"
+  local forbidden_text="$2"
+  local source_file="${wanted[$skill_name]}/SKILL.md"
+  if grep -Fq -- "$forbidden_text" "$source_file"; then
+    echo "error: promoted $skill_name retains forbidden semantic contract: $forbidden_text" >&2
+    exit 1
+  fi
+}
+
+require_skill_contract "code-review" "Treat every reviewer finding as candidate evidence."
+require_skill_contract "resolving-merge-conflicts" "Abort or restart from a verified"
+require_skill_contract "research" "If you are already a delegated worker"
+require_skill_contract "tdd" "Ask the user only when competing seam choices would materially"
+reject_skill_contract "code-review" "Present the two reports under"
+reject_skill_contract "resolving-merge-conflicts" 'never `--abort`'
+reject_skill_contract "tdd" "No test is written at an unconfirmed seam."
 
 if [[ "$mode" == "check" ]]; then
   failures=0
