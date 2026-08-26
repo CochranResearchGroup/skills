@@ -15,9 +15,6 @@
   Temporary paths alone are not durable handoff evidence; preserve or publish
   the necessary artifact in a repo-approved location, or record why the proof
   is intentionally ephemeral and how it can be reproduced.
-- Distinguish validation run by the primary agent from validation reported by a subagent or delegated worker.
-- If validation was delegated, record whether the primary agent independently verified the result or accepted the delegated evidence as-is.
-- For failed, timed-out, incomplete, or unknown subagent statuses, state what was trusted, what was ignored, and what remains unverified.
 - Use an independent evaluator when fresh judgment materially reduces risk or
   uncertainty, or when an explicit acceptance contract requires it. Duration or
   plan count alone does not make independent review mandatory for routine,
@@ -33,6 +30,10 @@
   reproducer, confidence, and suggested disposition. A useful independent
   review may return no findings; novelty and finding count are not quality
   metrics.
+- When both conformance and objective correctness matter, report them as
+  separate review axes: one for repository standards and one for the frozen
+  specification or acceptance contract. A pass on one axis cannot mask a
+  failure on the other, and the primary still adjudicates every finding.
 - Separate review modes. Use at most one broad fresh-context `drift_discovery`
   pass when observed drift, consequence, or uncertainty justifies it. After
   adjudication, use `closed_world` remediation

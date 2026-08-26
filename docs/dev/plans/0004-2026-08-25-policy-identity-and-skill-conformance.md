@@ -13,6 +13,9 @@ instructions that conflict with the adopted evaluator and Git safety contract.
 ## Scope
 
 - Reconcile each duplicate identity to one canonical retained policy path.
+- Retire roadmap/runbook governance and its exact legacy baseline because this
+  lightweight skill repo has neither authority surface and the module's stated
+  prerequisites are not met.
 - Preserve any unique repo-local semantics before removing superseded files.
 - Repair `AGENTS.md` so it wires each retained policy exactly once.
 - Keep Standards and Spec review separate while making findings candidates for
