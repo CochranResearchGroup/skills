@@ -52,6 +52,8 @@ Read and follow:
 - `docs/dev/policies/0033-upstream-fork-maintenance.md`
 - `docs/dev/policies/0034-active-lane-coordination.md`
 - `docs/dev/policies/0035-code-testing-discipline.md`
+- `docs/dev/policies/0036-model-selection-and-calibration.md`
+- `docs/dev/policies/0038-work-item-traceability.md`
 
 ## Scope
 
