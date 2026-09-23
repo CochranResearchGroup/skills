@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "chatgpt-github-engineering",
+  "version": "0.1.0",
+  "description": "Read-only GitHub analysis, planning, review, and writing workflows for ChatGPT.",
+  "author": {
+    "name": "Cochran Research Group",
+    "url": "https://github.com/CochranResearchGroup"
+  },
+  "repository": "https://github.com/CochranResearchGroup/skills",
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "engineering",
+    "code-review",
+    "architecture",
+    "planning"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "ChatGPT GitHub Engineering",
+        "shortDescription": "Analyze and plan from connected GitHub repositories",
+        "longDescription": "Read-only engineering workflows that use ChatGPT's separately connected GitHub app for repository-grounded analysis, review, planning, and handoff.",
+        "developerName": "Cochran Research Group",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read"
+        ],
+        "defaultPrompt": [
+          "Review an authorized GitHub repository and identify the highest-risk code changes.",
+          "Turn repository evidence into an implementation-ready specification."
+        ],
+        "brandColor": "#24292F"
+      }
+    }
+  }
+}
