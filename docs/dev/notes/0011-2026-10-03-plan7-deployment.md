@@ -14,7 +14,7 @@ Independent fresh codex app-server stdio skills/list request with forceReload=tr
 
 ## Validation summary
 
-Metadata, relative links, shell syntax, plugin version/strict compatibility, planning audit and publisher semantic contracts pass. Selector suite: 124 tests pass in a harness with the actual policy source; the earlier installed-layout failure is preserved in Note 0010. Actual implement-spec fixture trial and fresh skill exercises pass within declared limits. Primary independently reran integration acceptance and verified complete recovery bundle. Notes 0007–0010 preserve delegated handles, evidence and primary reconciliation.
+Metadata, relative links, shell syntax, plugin version, strict marketplace and staged-plugin compatibility, planning audit and publisher semantic contracts pass. Selector suite: 124 tests pass in a harness with the actual policy source; the earlier installed-layout failure is preserved in Note 0010. Actual implement-spec fixture trial and fresh skill exercises pass within declared limits. Primary independently reran integration acceptance and verified complete recovery bundle. Notes 0007–0010 preserve delegated handles, evidence and primary reconciliation.
 
 Two simultaneous Codex workers, host restart recovery and provider/production execution were not tested and are not claimed. The trial did exercise actual Codex delegation, explicit isolation, concurrent shell work, failed/skipped-test gates, serial integration, ledger resume and recoverable cleanup. Nonblocking review suggestions for a named validation harness and CI remain backlog.
 
@@ -23,3 +23,9 @@ Two simultaneous Codex workers, host restart recovery and provider/production ex
 origin is CochranResearchGroup/skills, verified PUBLIC. Completed ordinary push to adoption/plan7 at b39275882a557513b322aaa15802c2d628df59a1; exact remote SHA readback matched. Remote eco/main remains 833ea53f222029ed62a07adcf087b4005724e251. Local upstream mirror main is d81f3a1. Acceptance session: https://previews.ecochran.dyndns.org/s/d0c06c7ed800. Preview session and artifact ingress return HTTP200 login pages, as expected for authenticated viewing; actual logged-in visual inspection is not claimed. MCP publication confirms the copied Markdown artifact family and external browser URL. Final documentation checkpoint is pushed and independently read back at closeout. No package release or tag is part of this adoption.
 
 Memory disposition: not_durable; exact-run receipts and adoption authority are retained in committed repo artifacts rather than seeded as separate long-lived agent memory.
+
+## Final validation correction
+
+The final direct strict plugin-manifest check reports one inherited warning: root CLAUDE.md is project context and is not loaded as plugin context. Strict mode treats that warning as failure. It is adjudicated nonblocking for source adoption: preserve the upstream project instruction file, and exclude it from the plugin delivery boundary. A disposable staging bundle /tmp/mapocock-plan7-plugin-stage-yketn43k contains the exact manifest and 27 promoted directories, no root CLAUDE.md; direct strict plugin validation passes there. The earlier marketplace-only success was too broad a basis for claiming direct source strict validation; Note 0010 is corrected. This change does not modify source skill behavior or installed metadata.
+
+Temporary integration worktree removed normally after clean state, exact tip and remote custody checks. Permanent eco/plan7 is clean and tracks origin/adoption/plan7. Recovery and candidate refs are retained.

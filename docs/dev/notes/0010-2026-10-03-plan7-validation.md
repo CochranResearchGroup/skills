@@ -9,7 +9,7 @@ Source candidate: adoption/plan7, rebased onto upstream d81f3a183412e71a5b1e84ca
 - All skill YAML frontmatter and 27 promoted Codex metadata blocks parse with PyYAML via uv.
 - Non-example relative links resolve across promoted skills, README/index and engineering/productivity docs. Markdown fenced examples excluded; their fictional paths are not source links.
 - Plugin version synchronization: PASS, 1.2.3.
-- Strict Claude plugin/marketplace validation: PASS; verifies upstream compatibility only, not Codex runtime.
+- Strict marketplace validation: PASS. Direct strict source plugin validation reports the inherited root CLAUDE.md packaging warning; this is nonblocking because project context is retained deliberately and is not shipped as plugin context. Strict validation of a disposable staging bundle containing the manifest and exact 27 promoted skill directories passes. This verifies plugin packaging compatibility, not Codex runtime.
 - Publisher shell syntax, semantic contract checks and disposable 27-link publication: PASS.
 - Planning audit: PASS after normalizing Plans 6/7 to parser-supported Status headers.
 - git diff --check: PASS.
