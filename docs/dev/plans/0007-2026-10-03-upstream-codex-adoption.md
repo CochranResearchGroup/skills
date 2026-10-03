@@ -1,6 +1,6 @@
 # Upstream Adoption for Codex Remote
 
-Status: OPEN
+Status: CLOSED
 - Owner: primary agent
 - Fork: eco/main at 833ea53f222029ed62a07adcf087b4005724e251
 - Upstream reviewed: d81f3a183412e71a5b1e84ca21bc1a35eea03a60
@@ -8,9 +8,9 @@ Status: OPEN
 
 ## Current State
 
-Preparation and isolated upstream rebase are complete on adoption/plan7. The candidate includes pr/retro promotion, glossary compatibility, Codex routing and retained downstream contracts. Source and fixture validation pass; independent review, final installation, fresh catalog discovery, Previews delivery and candidate publication remain.
+All five steps are complete. Upstream d81f3a1 is integrated; 27 curated skills are installed and verified. Source checks, actual worker trial, fresh skill exercises and fresh client discovery pass with the limitations recorded in Notes 0007–0011. The acceptance packet is published at https://previews.ecochran.dyndns.org/s/d0c06c7ed800. Source checkpoint b39275882a557513b322aaa15802c2d628df59a1 was ordinarily pushed to origin/adoption/plan7 and its exact SHA read back.
 
-Recovery: backup/eco-main/2026-10-03-pre-plan7 at f99b249. The fork is PUBLIC; policy therefore requires ordinary publication to adoption/plan7 rather than a force-push over eco/main. Local eco/main and remote eco/main remain preserved. Selected upstream remains d81f3a183412e71a5b1e84ca21bc1a35eea03a60.
+Permanent installed checkout: eco/plan7. Public remote eco/main remains at 833ea53, as required by the no-force-push policy; publication on the new adoption branch is the planned fallback. Local main mirrors upstream at d81f3a1. Recovery ref backup/eco-main/2026-10-03-pre-plan7 remains at f99b249. Final receipt changes are published on the same candidate branch and verified at closeout.
 
 ## Scope
 
@@ -68,4 +68,4 @@ Preserve a recovery ref before history changes and backup installed entries befo
 
 All five steps complete, acceptance evidence is attached to exact source and installed identities, one Previews packet is delivered, our fork's published SHA is verified, and this plan is CLOSED. Full upstream adoption is not complete merely because files merge or installation checks pass.
 
-Execution authorized by the user on 2026-10-03. Preparation is in progress.
+Execution authorized and completed on 2026-10-03. Candidate publication is complete; merging it into a shared canonical branch is outside this plan.
