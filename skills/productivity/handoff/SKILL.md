@@ -9,7 +9,7 @@ Write a handoff document summarising the current conversation so a fresh agent c
 
 If the user asks for a durable note, repo policy handoff, plan continuation, or a handoff "per policy", read `AGENTS.md` and relevant files under `docs/dev/policies/`, then write the handoff where the repo says continuity artifacts live, commonly `docs/dev/notes/`.
 
-Include a "suggested skills" section in the document, naming which skills the next agent should call the Skill tool for.
+Include a "suggested skills" section in the document, naming which skills the next agent should read the available skill instructions for.
 
 Do not duplicate content already captured in other artifacts (specs, plans, ADRs, issues, commits, diffs). Reference them by path or URL instead.
 

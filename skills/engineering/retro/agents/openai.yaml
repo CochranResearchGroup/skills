@@ -1,5 +1,5 @@
 interface:
-  display_name: "Retro"
-  short_description: "Conduct a retrospective on a coding session."
+  display_name: "Retrospective"
+  short_description: "Improve the environment from session evidence"
 policy:
   allow_implicit_invocation: false

@@ -3,6 +3,10 @@ name: ask-matt
 description: Ask which skill or flow fits your situation. A router over the skills in this repo.
 disable-model-invocation: true
 ---
+## Domain authority compatibility
+
+Use the repository's configured domain-document authority first. Otherwise use an existing GLOSSARY-MAP.md or CONTEXT-MAP.md and its relevant files; for a single glossary use existing GLOSSARY.md or CONTEXT.md. If both conventions exist without configured authority, reconcile their intent before editing rather than choosing by recency. For a new unconfigured repo, use GLOSSARY.md (and GLOSSARY-MAP.md only when multiple contexts require it). Read and update the selected authority; filename examples below do not authorize creating competing files or renaming other repos.
+
 
 # Ask Matt
 
@@ -20,7 +24,7 @@ The route most work travels. You have an idea and want it built.
    - **`/prototype`** to answer the question with throwaway code,
    - **`/handoff`** back what you learned, and reference it from the original idea thread.
 3. **Branch: is this a multi-session build?**
-   - **Yes** → **`/to-spec`** (turn the thread into a spec), then **`/to-tickets`** to split it into tracer-bullet tickets, each declaring its **blocking edges**. On a local tracker that's one file per ticket under `.scratch/<feature>/issues/`; in a repo-native workflow they are checked-in plan artifacts; on a real tracker the edges become native blocking links. For a complete ticket graph, explicitly invoke **`/implement-spec`** to coordinate one validated integration branch. Alternatively, start a fresh implementation session per ready ticket and **`/clear` context between tickets**.
+   - **Yes** → **`/to-spec`** (turn the thread into a spec), then **`/to-tickets`** to split it into tracer-bullet tickets, each declaring its **blocking edges**. On a local tracker that's one file per ticket under `.scratch/<feature>/issues/`; in a repo-native workflow they are checked-in plan artifacts; on a real tracker the edges become native blocking links. For a complete ticket graph, explicitly invoke **`/implement-spec`** to coordinate one validated integration branch. Alternatively, start a fresh implementation session per ready ticket and start a new Codex session between tickets when a clean context is useful.
    - **No** → implement the work right here, in the same context window.
 
    Either way, drive the work with **`/tdd`** where the seam and risk justify it, one red-green slice at a time, then close out with **`/code-review`**, a two-axis review (Standards + Spec) whose candidate findings the primary adjudicates. Commit only when the user or repo policy authorizes it.
@@ -63,7 +67,7 @@ Two model-invoked references that run *beneath* the other skills: each the singl
 A **phase** is a chunk of work inside a session: the grilling, the implementation, the QA. At the **boundary** between two of them you have five options, and picking between them is the fuzziest decision in this whole map:
 
 - **Continue**: stay put. Costs nothing, loses nothing.
-- **`/clear`**: empty the window, when nothing here matters to what's next.
+- **New Codex session**: start fresh when nothing here matters to what comes next; use a handoff when it does.
 - **`/handoff`**: write a portable markdown file. Narrow: only for a **new harness**, a **new directory**, a **colleague**, or forking a side task **mid-phase**. What it buys is portability.
 - **Subagent**: send a tightly-scoped task to its own window and get a report back.
 - **`/compact`**: compress this context and seed a fresh session with it. The **default**, at the bottom of the tree rather than the first reach.
@@ -88,3 +92,7 @@ Off the main flow entirely.
 ## Precondition
 
 **`/setup-matt-pocock-skills`**: run before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work.
+
+## Codex remote delivery
+
+Invoke named skills explicitly through the interface supported by the current Codex client, or ask to use the named skill. Read available SKILL.md instructions instead of assuming a Claude Skill tool. Use /pr when writing a PR body and explicitly request /retro to review a completed session. Publish substantial generated review artifacts through the available previews skill as one browser session; local desktop launching is not reliable in remote sessions.

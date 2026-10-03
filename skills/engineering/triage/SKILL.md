@@ -3,6 +3,10 @@ name: triage
 description: "Move issues and external PRs through a state machine of triage roles: categorise, verify, grill if needed, and write agent-ready briefs."
 disable-model-invocation: true
 ---
+## Domain authority compatibility
+
+Use the repository's configured domain-document authority first. Otherwise use an existing GLOSSARY-MAP.md or CONTEXT-MAP.md and its relevant files; for a single glossary use existing GLOSSARY.md or CONTEXT.md. If both conventions exist without configured authority, reconcile their intent before editing rather than choosing by recency. For a new unconfigured repo, use GLOSSARY.md (and GLOSSARY-MAP.md only when multiple contexts require it). Read and update the selected authority; filename examples below do not authorize creating competing files or renaming other repos.
+
 
 # Triage
 
@@ -75,7 +79,7 @@ Show counts and a one-line summary per item. Let the maintainer pick.
 
 3. **Verify the claim.** Before any grilling, check that the claim holds up. For a bug, reproduce it from the reporter's steps. For a PR, confirm the diff does what it claims: check it out, run the relevant tests or commands. Report what happened: confirmed (with code path), failed, or insufficient detail (a strong `needs-info` signal). A confirmed verification makes a much stronger agent brief.
 
-4. **Grill (if needed).** If the request needs fleshing out, call the Skill tool twice, for "grilling" and "domain-modeling": grill it into shape a round of questions at a time, sharpening domain terms and updating `GLOSSARY.md`/ADRs inline as decisions land.
+4. **Grill (if needed).** If the request needs fleshing out, read the available grilling and domain-modeling skill instructions: grill it into shape a round of questions at a time, sharpening domain terms and updating `GLOSSARY.md`/ADRs inline as decisions land.
 
 5. **Apply the outcome:**
    - `ready-for-agent`: post an agent brief comment ([AGENT-BRIEF.md](AGENT-BRIEF.md)).

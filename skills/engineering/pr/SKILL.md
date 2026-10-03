@@ -9,12 +9,14 @@ metadata:
     url: "https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md"
 ---
 
-Use this template for writing the PR body:
+Write a PR body that explains the concrete problem, resulting behavior, observed validation, and material risk. This is a format reference: creating, pushing, or merging a PR follows the user's existing authorization and repository policy.
+
+Read the repository PR template and applicable instructions first; fill their required fields instead of replacing them. Scale the body to the change. A small nonvisual fix usually needs one or two sentences plus validation, without a diagram or a risk taxonomy. For complex changes, use the following optional shape:
 
 ```markdown
 ## Summary
 
-<diagram, diff-sketch, or tree>
+<concrete problem and resulting behavior; optional diagram, diff-sketch, or tree>
 
 ## Evidence
 
@@ -27,18 +29,24 @@ Use this template for writing the PR body:
 
 <optional: description>
 
-**Blast Radius:** <one-word description>
+**Affected scope:** <concrete affected users, surfaces, or data>
 
 <optional: potential ramifications of merge>
 ```
 
 ## Sections
 
-Skip all preambles and keep prose brief. Use the user's domain language from `GLOSSARY.md`.
+Skip preambles and keep prose brief. Use the user's configured domain authority; otherwise use existing `GLOSSARY.md` or legacy `CONTEXT.md`. Do not invent a second authority. If both glossary and legacy files exist without configuration and disagree, inspect repository routing and reconcile the ambiguity before selecting terms; preserve both and do not overwrite either.
+
+## Codex remote and artifact delivery
+
+Use the available Codex tools or a structured forge tool; no Claude Skill-tool call is required. With `gh`, write multiline bodies to a file and use `--body-file`. Keep reviewer-facing Markdown self-contained.
+
+For substantial review packets or visual artifacts, use the `previews` skill, group related outputs into one session, and return its browser URL to the user. Use feedback only for an approval required by the task. If Previews is unavailable, state the limitation and provide accessible Markdown or artifact locators. Do not place private artifacts or inaccessible preview links in a public PR; attach only audience-appropriate evidence.
 
 ### Summary
 
-Pick the smallest view that makes the key point clear.
+Lead with the concrete change. Add the smallest visual only when it makes the key point clearer than prose.
 
 - Show logic or an algorithm as pseudocode:
 
@@ -157,14 +165,14 @@ You may use one of these, you may use several, it is unlikely you will use all o
 
 ### Evidence
 
-Concrete evidence that the change works. Show a before and after.
+Use evidence actually observed: exact check commands and outcomes, relevant output, or screenshots. State skipped checks and limitations. Show before and after when captured; do not fabricate a failing baseline or claim execution from pseudocode. A passing targeted check can be enough for a small change.
 
-Screenshots are S-tier - when the environment is set up for it and the change is visual.
+For visual changes, screenshots or browser artifacts can demonstrate the affected behavior when the environment supports capture.
 
-Execution-based evidence is A-tier. Test results, console output. Show the exact test that now fails and passes, using pseudocode.
+For nonvisual changes, prefer relevant execution results. Pseudocode explains behavior but is not execution evidence.
 
 ### Merge Danger
 
-Describe whether it's a one-way or two-way door. You can walk back through two-way doors, but not one-way doors. A PR that is cheap to roll back is lower risk. Changes that involve destructive actions or hard-to-reverse decisions are one-way doors.
+Include this section when reversibility or impact needs explanation, or the repository template requires it. Describe whether it's a one-way or two-way door. You can walk back through two-way doors, but not one-way doors. A PR that is cheap to roll back is lower risk. Changes that involve destructive actions or hard-to-reverse decisions are one-way doors.
 
 The blast radius is the potential impact or scope of the changes introduced by this PR. Consider all possibilities. Examples are layout shift, breakages for consumers, mobile responsiveness, etc.

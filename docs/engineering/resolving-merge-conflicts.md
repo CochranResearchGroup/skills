@@ -1,4 +1,4 @@
-> **Archived.** This skill was removed from the plugin in v1.3.0 and is no longer maintained. Nothing replaces it: the agent works through a merge or rebase conflict without a dedicated skill. The page stays up for reference.
+> **Retained downstream.** Upstream removed this skill; our fork maintains and promotes its intent-based reconciliation, verified recovery and safe abort/restart behavior.
 
 ## What it does
 
@@ -51,3 +51,5 @@ When either side's intent cannot be established, the recovery point is uncertain
 ## Where it fits
 
 A reach-for-it-anytime standalone with no dependencies on any other skill: it starts when git stalls and ends when the tree is clean and committed. Its only real neighbour is [diagnosing-bugs](https://aihero.dev/skills-diagnosing-bugs), which takes over at the point where a merge resolved cleanly but the merged code misbehaves: a diagnosis problem, not a conflict one. It sits off the main idea-to-ship flow entirely, so [ask-matt](https://aihero.dev/skills-ask-matt) is the map for what runs before and after it.
+
+Our fork retains this skill for intent-based reconciliation, verified recovery, semantic validation and safe abort/restart.

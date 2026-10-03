@@ -1,6 +1,6 @@
 # Upstream Adoption for Codex Remote
 
-- State: OPEN
+Status: OPEN
 - Owner: primary agent
 - Fork: eco/main at 833ea53f222029ed62a07adcf087b4005724e251
 - Upstream reviewed: d81f3a183412e71a5b1e84ca21bc1a35eea03a60
@@ -8,7 +8,9 @@
 
 ## Current State
 
-Upstream has been fetched and evaluated. Our adapted implement-spec is already committed, pushed and installed; its execution trial remains unrun. The upstream evaluation note is untracked and must be preserved. Full upstream integration, pr/retro adoption and glossary compatibility remain.
+Preparation and isolated upstream rebase are complete on adoption/plan7. The candidate includes pr/retro promotion, glossary compatibility, Codex routing and retained downstream contracts. Source and fixture validation pass; independent review, final installation, fresh catalog discovery, Previews delivery and candidate publication remain.
+
+Recovery: backup/eco-main/2026-10-03-pre-plan7 at f99b249. The fork is PUBLIC; policy therefore requires ordinary publication to adoption/plan7 rather than a force-push over eco/main. Local eco/main and remote eco/main remain preserved. Selected upstream remains d81f3a183412e71a5b1e84ca21bc1a35eea03a60.
 
 ## Scope
 

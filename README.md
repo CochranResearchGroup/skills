@@ -230,3 +230,7 @@ General workflow tools, not code-specific.
 - **[writing-for-agents](./skills/productivity/writing-for-agents/SKILL.md)**: Writing documents for agents: skills, AGENTS.md/CLAUDE.md, and any doc an agent reaches by a pointer.
 
 - **[implement-spec](./skills/engineering/implement-spec/SKILL.md)**: Explicitly coordinate a spec and dependent tickets into one validated integration branch. Supports bounded parallel workers or sequential execution.
+
+- **[pr](./skills/engineering/pr/SKILL.md)**: Write concise PR bodies with observed evidence, relevant risk and optional visuals.
+
+- **[retro](./skills/engineering/retro/SKILL.md)**: Explicitly review a Codex session and recommend evidence-backed environment improvements.

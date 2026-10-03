@@ -2,6 +2,10 @@
 name: tdd
 description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests.
 ---
+## Domain authority compatibility
+
+Use the repository's configured domain-document authority first. Otherwise use an existing GLOSSARY-MAP.md or CONTEXT-MAP.md and its relevant files; for a single glossary use existing GLOSSARY.md or CONTEXT.md. If both conventions exist without configured authority, reconcile their intent before editing rather than choosing by recency. For a new unconfigured repo, use GLOSSARY.md (and GLOSSARY-MAP.md only when multiple contexts require it). Read and update the selected authority; filename examples below do not authorize creating competing files or renaming other repos.
+
 
 # Test-Driven Development
 
@@ -27,7 +31,7 @@ change external behavior, scope, cost, or architecture.
 
 Ask: "What's the public interface, and which stable seam proves this risk?"
 
-When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with "codebase-design" for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run.
+When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), read the available skill instructions for "codebase-design" for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run.
 
 ## Anti-patterns
 

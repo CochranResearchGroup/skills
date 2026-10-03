@@ -1,6 +1,6 @@
 # Adopt Implement Spec
 
-- State: CLOSED
+Status: CLOSED
 - Owner: primary agent
 - Scope: adapt and promote implement-spec; install both local skill roots
 - Non-goals: upstream rebase, other skill adoption, remote publication

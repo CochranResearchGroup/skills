@@ -31,3 +31,7 @@ Model- or user-reachable (rich trigger phrasing so the model can reach for them)
 - **[wizard](./wizard/SKILL.md)**: Generate an interactive bash wizard that walks a human through steps only they can perform: provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover.
 
 - **[implement-spec](./implement-spec/SKILL.md)**: Explicitly coordinate a spec and dependent tickets into one validated integration branch. Supports bounded parallel workers or sequential execution.
+
+- **[pr](./pr/SKILL.md)**: Write concise PR bodies with observed evidence, relevant risk and optional visuals.
+
+- **[retro](./retro/SKILL.md)**: Explicitly review a Codex session and recommend evidence-backed environment improvements.

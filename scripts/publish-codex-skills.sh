@@ -35,7 +35,7 @@ for skill_path in "${skill_paths[@]}"; do
   source_dir="$repo_root/${skill_path#./}"
   skill_name="$(basename "$source_dir")"
   case "$skill_name" in
-    implement|retro)
+    implement)
       echo "error: $skill_name must not be published by this downstream" >&2
       exit 1
       ;;
@@ -71,6 +71,11 @@ reject_skill_contract() {
   fi
 }
 
+require_skill_contract "pr" "Scale the body to the change."
+require_skill_contract "pr" "previews"
+require_skill_contract "retro" "provided Codex conversation"
+require_skill_contract "retro" "file-searcher"
+require_skill_contract "domain-modeling" "configured domain-document authority first"
 require_skill_contract "implement-spec" "A skipped required test is missing evidence, not success."
 require_skill_contract "implement-spec" "Never reset another checkout"
 require_skill_contract "implement-spec" "at most one broad review"

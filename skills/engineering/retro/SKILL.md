@@ -8,9 +8,9 @@ The user has asked for a **retrospective**. You are suggesting improvements to t
 
 ## Steps
 
-1. Call the Skill tool with `writing-for-agents` for the writing style guide.
+1. This skill is explicitly invoked by the user. Load `writing-for-agents` through the available Codex skill interface or read its installed `SKILL.md`; do not assume a Claude Skill tool. Follow repository authority when it differs.
 
-2. Read the primary sources for the session the user specifies. This may mean searching through session logs on this machine. If the user doesn't specify a session, default to the current one.
+2. Read the provided Codex conversation, session export, or exact log artifact for the specified session; default to the visible current session. For an unknown log location outside the repository, use `file-searcher` first. Do not assume Claude log paths or that a remote Codex session's full history exists locally. If evidence is incomplete, state the reviewed interval and limitations; ask for missing evidence only when needed. Do not fill gaps with remembered struggles.
 
 3. Look for candidates for improvement in these categories.
 
@@ -22,7 +22,11 @@ The user has asked for a **retrospective**. You are suggesting improvements to t
 - **No-ops**: look for instructions in steering files that don't modify the agent's behavior. _Use when_ the steering files are large and unwieldy.
 - **Information access**: look for opportunities to increase the agent's access to information. Teeing dev server logs, readonly access to third-party services. _Use when_ a crucial piece of information was not available to the agent.
 
-4. Present these candidates to the user, in order of severity.
+4. Present only source-backed candidates in severity order. Each names the observed moment or source locator, consequence, proposed improvement, and cheapest meaningful verification. No finding is a valid result; do not invent advice to fill categories. Distinguish missing checks from checks that exist but are unwired, and assess ongoing maintenance cost.
+
+5. Default to recommendations when asked for a retrospective. Implement candidates already authorized within the task's scope without a redundant approval request; do not expand a retrospective into unrelated global instruction edits, broader access grants, or other repositories. When implementation is authorized, prefer a deterministic check for mechanical errors, verify it detects the failure where practical, and update the relevant docs.
+
+6. For a substantial report, use the `previews` skill and publish findings and supporting artifacts in one session; return one browser URL. Use feedback only when approval is actually required. If unavailable, state the fallback and deliver the report in accessible Markdown. Keep secrets and raw private session logs out of shared artifacts.
 
 ## Reference
 
@@ -30,15 +34,15 @@ The user has asked for a **retrospective**. You are suggesting improvements to t
 
 Remember that all work goes through two stages: implementation and review. The implementation agent has the most **context pressure**. They are responsible for exploration, writing code, and debugging failures.
 
-The review agent has the least context pressure - it receives a diff, so no exploration needed. It often does not need to write code or debug.
+A reviewing agent can focus on the diff and relevant source, standards, and specification. Review may still require exploration, execution, or debugging; do not assume the diff alone proves correctness.
 
-This means that the review agent should be responsible for imposing coding standards, not the implementation agent.
+Keep detailed judgement guidance available to review without bloating every implementation prompt. Implementation still follows the repository standards and authority. Separate reviewer agents are optional and require applicable delegation authority.
 
 ### Files
 
 You have access to several files in the repo:
 
-- `CLAUDE.md`/`AGENTS.md`: these files are pushed to the context window of any agent working in this repo. They should be used incredibly sparingly, usually only for **navigation pointers** to other files.
+- `AGENTS.md` (and `CLAUDE.md` where maintained for upstream compatibility): these files are pushed to the context window of any agent working in this repo. They should be used incredibly sparingly, usually only for **navigation pointers** to other files.
 - `CODING_STANDARDS.md`: this file is read during review, not implementation. Add **navigation pointers** to docs folders if the standards file gets more than 1,000 lines long.
 - Docs: use docs as references files, pointed to by other files. Look for existing docs before writing new ones.
 - Skills: use skills for docs (since their description goes into the agent's context window), or for user-invoked commands. Follow the advice in the `writing-for-agents` skill.
