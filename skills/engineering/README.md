@@ -29,3 +29,5 @@ Model- or user-reachable (rich trigger phrasing so the model can reach for them)
 - **[code-review](./code-review/SKILL.md)**: Review a fixed diff on separate **Standards** and **Spec** axes, then verify and adjudicate evidence-shaped findings.
 - **[resolving-merge-conflicts](./resolving-merge-conflicts/SKILL.md)**: Resolve an in-progress merge or rebase by primary-source intent and semantic validation, with safe abort or restart when proof is insufficient.
 - **[wizard](./wizard/SKILL.md)**: Generate an interactive bash wizard that walks a human through steps only they can perform: provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover.
+
+- **[implement-spec](./implement-spec/SKILL.md)**: Explicitly coordinate a spec and dependent tickets into one validated integration branch. Supports bounded parallel workers or sequential execution.

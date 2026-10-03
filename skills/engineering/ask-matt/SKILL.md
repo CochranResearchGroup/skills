@@ -20,7 +20,7 @@ The route most work travels. You have an idea and want it built.
    - **`/prototype`** to answer the question with throwaway code,
    - **`/handoff`** back what you learned, and reference it from the original idea thread.
 3. **Branch: is this a multi-session build?**
-   - **Yes** → **`/to-spec`** (turn the thread into a spec), then **`/to-tickets`** to split it into tracer-bullet tickets, each declaring its **blocking edges**. On a local tracker that's one file per ticket under `.scratch/<feature>/issues/`; in a repo-native workflow they are checked-in plan artifacts; on a real tracker the edges become native blocking links. Start a fresh implementation session per ready ticket and **`/clear` context between tickets**.
+   - **Yes** → **`/to-spec`** (turn the thread into a spec), then **`/to-tickets`** to split it into tracer-bullet tickets, each declaring its **blocking edges**. On a local tracker that's one file per ticket under `.scratch/<feature>/issues/`; in a repo-native workflow they are checked-in plan artifacts; on a real tracker the edges become native blocking links. For a complete ticket graph, explicitly invoke **`/implement-spec`** to coordinate one validated integration branch. Alternatively, start a fresh implementation session per ready ticket and **`/clear` context between tickets**.
    - **No** → implement the work right here, in the same context window.
 
    Either way, drive the work with **`/tdd`** where the seam and risk justify it, one red-green slice at a time, then close out with **`/code-review`**, a two-axis review (Standards + Spec) whose candidate findings the primary adjudicates. Commit only when the user or repo policy authorizes it.
