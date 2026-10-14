@@ -92,3 +92,7 @@ grill-with-docs → to-spec → to-tickets → implementation → code-review
 ```
 
 [to-spec](https://aihero.dev/skills-to-spec) agrees the test seams up front, the implementation session drives `tdd` per ticket, and [code-review](https://aihero.dev/skills-code-review) checks afterwards that only the agreed seams were used: and owns the refactoring `tdd` no longer does. Its other neighbour is [codebase-design](https://aihero.dev/skills-codebase-design), the shared source of the seam and deep-module vocabulary `tdd` speaks. You can also reach for it on its own, whenever there is a concrete behaviour to build and no full spec in play. When you are unsure which skill fits your situation, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
+
+## Codex maintenance update
+
+For each proposed stable seam, briefly state what it catches and what it misses. Routine existing seams do not require renewed user approval.

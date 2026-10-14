@@ -234,3 +234,7 @@ General workflow tools, not code-specific.
 - **[pr](./skills/engineering/pr/SKILL.md)**: Write concise PR bodies with observed evidence, relevant risk and optional visuals.
 
 - **[retro](./skills/engineering/retro/SKILL.md)**: Explicitly review a Codex session and recommend evidence-backed environment improvements.
+
+## Downstream maintenance update
+
+This Codex fork incorporates upstream 1.3.1 maintenance fixes while retaining its curated local publisher and Previews delivery. Experimental chief-of-staff remains unpromoted. Upstream issue automation is retained as disabled source under .github until separately adopted. Use scripts/publish-codex-skills.sh for our curated installations; upstream self-updating Claude installs do not manage this carry.

@@ -94,3 +94,7 @@ No. It diffs `<fixed-point>...HEAD`, three-dot, which is measured from the merge
 - [improve-codebase-architecture](https://aihero.dev/skills-improve-codebase-architecture) is the whole-codebase counterpart: this skill only ever looks at one diff.
 
 [ask-matt](https://aihero.dev/skills-ask-matt) routes across the whole set when you are unsure which skill the situation wants.
+
+## Codex maintenance update
+
+Discover all relevant standards sources, including CODING_STANDARDS.md and CONTRIBUTING.md. Await delegated reviewers before aggregation when delegation is used; the Codex primary may run axes separately when appropriate.

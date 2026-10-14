@@ -29,7 +29,7 @@ than every edge case. Use existing public seams when they clearly match the
 frozen objective. Ask the user only when competing seam choices would materially
 change external behavior, scope, cost, or architecture.
 
-Ask: "What's the public interface, and which stable seam proves this risk?"
+Ask: "What's the public interface, and which stable seam proves this risk?" Give each proposed seam a one-line note on what it catches and what it misses.
 
 When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), read the available skill instructions for "codebase-design" for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run.
 

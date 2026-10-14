@@ -91,3 +91,7 @@ Check the changelog for a rename before assuming it is gone. `writing-great-skil
 It is a [secondary source](https://www.aihero.dev/ai-coding-dictionary/secondary-source) over the skills it describes. Where the router and a `SKILL.md` disagree, the `SKILL.md` is right.
 
 Our Codex fork routes whole ticket graphs to implement-spec, PR descriptions to pr, and explicitly requested session review to retro. Substantial generated artifacts are delivered as one Previews browser session.
+
+## Codex maintenance update
+
+Read a skill's actual SKILL.md before asserting its behavior or skipping steps. After bug repair, consider explicitly requesting retro; an absent seam can instead motivate an architecture survey.

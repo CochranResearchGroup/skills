@@ -98,3 +98,7 @@ grill-with-docs → to-spec → to-tickets → implementation → code-review
 ```
 
 Upstream is [to-spec](https://aihero.dev/skills-to-spec), which hands it a settled spec to slice against: keep both in one unbroken context window. Downstream, one fresh implementation session builds each ready ticket, using [tdd](https://aihero.dev/skills-tdd) for the tests and closing with [code-review](https://aihero.dev/skills-code-review). When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
+
+## Codex maintenance update
+
+When splitting an existing issue, attach tickets as its sub-issues separately from blocking relationships; omit redundant Blocked by prose when native blocker edges are authoritative. Repo-native artifacts remain supported.
