@@ -1,11 +1,11 @@
 # Plan 8 | Upstream maintenance for Codex
 
-Status: OPEN
+Status: CLOSED
 Owner: primary agent
 
 ## Current State
 
-Clean installed checkout eco/plan7 at d03a28d; upstream 49dd158, 52 commits since d81f3a1. Policies v0.1.32 and prior Codex/Previews adoption must survive. Adoption and validation remain.
+Completed integration of upstream 49dd158 through merge commit ce6b7fad420dd18d50d64d44fdc1729ff17a5aa7. Installed permanent checkout eco/plan8 verifies 27 promoted skills in all three paths; no broken links. origin/adoption/plan8 exact source SHA readback matched. Five wizard behavior tests, source checks, plugin staging validation and independent Standards/Spec review pass. chief-of-staff is unpromoted; issue automation stays disabled. Recovery ref is retained. Acceptance browser packet and final receipt checkpoint complete closeout.
 
 ## Scope and execution
 
@@ -23,3 +23,5 @@ Critical path is serialized under primary ownership. Independent validation may 
 ## Acceptance and done
 
 Upstream is an ancestor, current policies and ChatGPT plugin unchanged, frozen carry and 27 promoted memberships verified. Source checks pass. Wizard exercises cover apostrophes/special characters, repeat reads, EOF, symlink .env and opener behavior without credentials/provider effects. Docs identify intentionally deferred automation and experimental skills. Standards and Spec reviews are independently stated and adjudicated. Installed links and remote readback match source. Close only after publishing the browser packet and receipt.
+
+Acceptance packet: https://previews.ecochran.dyndns.org/s/e069716e55fd
